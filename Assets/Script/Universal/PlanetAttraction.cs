@@ -26,7 +26,10 @@ public class PlanetAttraction : MonoBehaviour
         Vector3 forceDir = direction.normalized * forceMegnitude;
         rbOther.AddForce(forceDir);
     }
-
+    private void Start()
+        {
+            GetComponent<Rigidbody>().AddForce(0,0,0);
+        }
     void FixedUpdate()
     {
         foreach (var attraction in pAttractions)
@@ -46,4 +49,6 @@ public class PlanetAttraction : MonoBehaviour
         }
         pAttractions.Add(this);
     }
+
+    
 }
