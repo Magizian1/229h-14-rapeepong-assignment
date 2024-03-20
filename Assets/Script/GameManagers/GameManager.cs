@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     private float timeUp;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timeEnd;
-    public TextMeshProUGUI scoreEnd;
+    
 
     public GameObject uiScene;
     public GameObject endScene;
@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
     {
             timeUp = s_Time - Time.time;
             timerText.text = "Time : " + timeUp.ToString("F2");
-            Debug.Log(timeUp);
+            timeEnd.text = "Time : " + timeUp.ToString("F2");
+            
     }
 
     public void OnClickPause()
@@ -46,24 +47,5 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             
         }
-    }
-
-    public void OnPause()
-    {
-        Debug.Log("GameManager OnPause() is called.");
-
-        
-        Time.timeScale = 0;
-        
-        
-        ShowSumUi();
-    }
-
-    public void ShowSumUi()
-    {
-        timeEnd.text = "Time : " + timerText;
-        scoreEnd.text = "Score : " + BubbleCoin.Instance.bubleWalletText;
-        uiScene.SetActive(false);
-        endScene.SetActive(true);
-    }
+    }  
 }
