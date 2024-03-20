@@ -4,38 +4,33 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-    public float moveSpeed = 5f; 
-    public Rigidbody rb; 
+    public float moveSpeed = 5f;
+    public Rigidbody rb;
+    public float airResistance = 0.1f; 
 
-    Vector3 movement;
-
-    //public GameObject endScene;
-
-    private void Start()
+    private void FixedUpdate()
     {
-        //endScene.SetActive(false);
-    }
-
-
-
-    void Update()
-    {
-        
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
         
-        movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
-    }
+        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
 
-    void FixedUpdate()
-    {
         
-        rb.AddForce(movement * moveSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        Vector3 force = movement * moveSpeed;
+
+        
+        Vector3 airResistanceForce = -rb.velocity * airResistance;
+
+        
+        Vector3 totalForce = force + airResistanceForce;
+
+        
+        rb.AddForce(totalForce, ForceMode.Force);
     }
 
-    
-    
+
+
 }
 
 
