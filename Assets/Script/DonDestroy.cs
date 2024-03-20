@@ -5,16 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DonDestroy : MonoBehaviour
 {
-    
-
-    
-
     void Start()
     {
         
         DontDestroyOnLoad(gameObject);
         
     }
-    
-
 }

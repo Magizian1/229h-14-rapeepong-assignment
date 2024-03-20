@@ -5,6 +5,8 @@ using TMPro;
 
 public class BubbleCoin : MonoBehaviour
 {
+    public static BubbleCoin Instance;
+
     private int bubble = 0;
 
     public TextMeshProUGUI bubleWalletText;
@@ -19,5 +21,12 @@ public class BubbleCoin : MonoBehaviour
             Destroy(u.gameObject);
             
         }
+        if (u.transform.tag == "Goal")
+        {
+            GameManager.Instance.OnPause();
+            //GameManager.Instance.ShowSumUi();
+            //endScene.SetActive(true);
+        }
     }
+    
 }
