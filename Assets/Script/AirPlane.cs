@@ -12,9 +12,10 @@ public class AirPlane : MonoBehaviour
     
     void FixedUpdate()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) 
+        if(Input.GetKey(KeyCode.Space)) 
         {
             rb.AddForce(transform.forward * enginePowerThrust);
+            
         }
 
         Vector3 lift = Vector3.Project(rb.velocity , transform.forward);
@@ -26,5 +27,7 @@ public class AirPlane : MonoBehaviour
         rb.AddTorque(Input.GetAxis("Horizontal") * transform.forward * -1);
 
         rb.AddTorque(Input.GetAxis("Vertical") * transform.right);
+
+        
     }
 }
