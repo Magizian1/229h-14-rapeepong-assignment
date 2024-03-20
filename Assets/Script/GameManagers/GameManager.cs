@@ -9,8 +9,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private float s_Time = 60f;
-    private float timeUp;
+    public float s_Time = 60f;
+    
+
+    private float timeElapsed;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI timeEnd;
     
@@ -24,15 +26,25 @@ public class GameManager : MonoBehaviour
     {
         uiScene.SetActive(true);
         endScene.SetActive(false);
+
+        timeElapsed = 0f;
     }
 
 
     void Update()
     {
-            timeUp = s_Time - Time.time;
-            timerText.text = "Time : " + timeUp.ToString("F2");
-            timeEnd.text = "Time : " + timeUp.ToString("F2");
-            
+        timeElapsed += Time.deltaTime; 
+        float timeRemaining = s_Time - timeElapsed;
+        
+
+
+        if (timeRemaining <= 0)
+        {
+            EndGame();
+        }
+
+        timerText.text = "Time : " + timeRemaining.ToString("F2");
+        timeEnd.text = "Time : " + timeRemaining.ToString("F2");
     }
 
     public void OnClickPause()
@@ -48,4 +60,23 @@ public class GameManager : MonoBehaviour
             
         }
     }  
+
+    public void Restart(string sceneName)
+    {
+        timeElapsed = 0f;
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
+
+    }
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
+
+    private void EndGame()
+    {
+        Time.timeScale = 0;
+        uiScene.SetActive(false);
+        endScene.SetActive(true);
+    }
 }

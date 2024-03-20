@@ -21,8 +21,8 @@ public class BubbleCoin : MonoBehaviour
         if (u.transform.tag == "Bubble")
         {
             bubble++;
-            bubleWalletText.text = "Score :" + bubble.ToString();
-            scoreEnd.text = "Score :" + bubble.ToString();
+            bubleWalletText.text = "Score : " + bubble.ToString();
+            scoreEnd.text = "Score : " + bubble.ToString();
             Debug.Log(bubble);
             Destroy(u.gameObject);
             
@@ -31,6 +31,7 @@ public class BubbleCoin : MonoBehaviour
         {
             OnPause();
             ShowSumUi();
+            Destroy(u.gameObject);
         }
     }
     public void OnPause()
