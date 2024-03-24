@@ -16,6 +16,9 @@ public class BubbleCoin : MonoBehaviour
     public GameObject uiScene;
     public GameObject endScene;
 
+    
+
+
     private void OnTriggerEnter(Collider u)
     {
         if (u.transform.tag == "Bubble")

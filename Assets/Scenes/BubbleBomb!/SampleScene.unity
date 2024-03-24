@@ -1225,7 +1225,6 @@ GameObject:
   m_Component:
   - component: {fileID: 287640060}
   - component: {fileID: 287640062}
-  - component: {fileID: 287640063}
   m_Layer: 0
   m_Name: GameManage
   m_TagString: Untagged
@@ -1266,19 +1265,6 @@ MonoBehaviour:
   uiScene: {fileID: 829290700}
   endScene: {fileID: 783241601}
   credit: {fileID: 1261729997}
---- !u!114 &287640063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287640059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 541d05a03e0e8724681dfcc84a7c3fae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  howToScene: {fileID: 0}
 --- !u!1001 &296699269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7828,7 +7814,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672875058}
-  m_Material: {fileID: 13400000, guid: 65812cb85d2854b43b6ac60e8630c34f, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9802,7 +9788,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -20, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10427,6 +10413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 707885110835759677, guid: 61607f18fdb90284fac6f7c2a3530c37, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 65812cb85d2854b43b6ac60e8630c34f, type: 2}
     - target: {fileID: 1511514728090570561, guid: 61607f18fdb90284fac6f7c2a3530c37, type: 3}
       propertyPath: m_Name
       value: Player
@@ -10491,6 +10481,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8989870244485355125, guid: 61607f18fdb90284fac6f7c2a3530c37, type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8989870244485355125, guid: 61607f18fdb90284fac6f7c2a3530c37, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3e5587d7b5f8ea140bceb79e51e63b35, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

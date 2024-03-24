@@ -21,15 +21,20 @@ public class GameManager : MonoBehaviour
     public GameObject endScene;
     public GameObject credit;
 
+    
 
+    
 
+    
     private void Start()
     {
+        
         uiScene.SetActive(true);
         endScene.SetActive(false);
         credit.SetActive(false);
 
         timeElapsed = 0f;
+        
     }
 
 
@@ -80,6 +85,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         uiScene.SetActive(false);
         endScene.SetActive(true);
+        
     }
     public void OnClickCredit()
     {
@@ -89,4 +95,6 @@ public class GameManager : MonoBehaviour
     {
         credit.SetActive(false);
     }
+
+    
 }
