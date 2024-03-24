@@ -236,6 +236,7 @@ MonoBehaviour:
   scoreEnd: {fileID: 0}
   uiScene: {fileID: 0}
   endScene: {fileID: 0}
+  particlePrefab: {fileID: 7774398727024534063, guid: 09a9b68b5e086994f8e751c27286262c, type: 3}
 --- !u!82 &8989870244485355125
 AudioSource:
   m_ObjectHideFlags: 0

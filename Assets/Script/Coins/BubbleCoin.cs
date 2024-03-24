@@ -16,9 +16,9 @@ public class BubbleCoin : MonoBehaviour
     public GameObject uiScene;
     public GameObject endScene;
 
+    public GameObject particlePrefab;
+
     
-
-
     private void OnTriggerEnter(Collider u)
     {
         if (u.transform.tag == "Bubble")
@@ -28,7 +28,8 @@ public class BubbleCoin : MonoBehaviour
             scoreEnd.text = "Score : " + bubble.ToString();
             Debug.Log(bubble);
             Destroy(u.gameObject);
-            
+            OnDestroy();
+
         }
         if (u.transform.tag == "Goal")
         {
@@ -38,15 +39,25 @@ public class BubbleCoin : MonoBehaviour
         }
     }
     public void OnPause()
-        {
-            Time.timeScale = 0;
-            ShowSumUi();
-        }
+    {
+        Time.timeScale = 0;
+        ShowSumUi();
+    }
     public void ShowSumUi()
-    { 
+    {
         uiScene.SetActive(false);
         endScene.SetActive(true);
     }
-    
+    private void OnDestroy()
+    {
 
+        if (particlePrefab != null)
+        {
+            
+            Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            
+        }
+
+        
+    }
 }
