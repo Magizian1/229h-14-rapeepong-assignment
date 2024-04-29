@@ -43,7 +43,6 @@ public class PlayerController2D : MonoBehaviour
             
         }
 
-
     }
     void FixedUpdate()
     {
@@ -53,10 +52,6 @@ public class PlayerController2D : MonoBehaviour
         {
             // เล่น Animation Clip ที่ชื่อ "Walk" ใน Animator Controller
             animator.Play("RunAnim");
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            animator.Play("JumpAnim");
         }
         else
         {
@@ -81,7 +76,9 @@ public class PlayerController2D : MonoBehaviour
         newScale.x = 1;
         transform.localScale = newScale;
     }
-   
+
+    
+
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Water"))
