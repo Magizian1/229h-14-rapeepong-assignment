@@ -7,6 +7,7 @@ TagManager:
   - Goal
   - Bubble
   - Water
+  - Coin
   layers:
   - Default
   - TransparentFX

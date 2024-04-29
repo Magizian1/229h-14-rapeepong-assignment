@@ -79,15 +79,12 @@ public class PlayerController2D : MonoBehaviour
 
     
 
-    /*private void OnTriggerEnter2D(Collider2D collision)
+   private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Water"))
+        if (collision.gameObject.CompareTag("Coin"))
         {
-            Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-            }
+            Destroy(collision.gameObject);
+            UIInGame.Instance.ScoreUp();
         }
-    }*/
+    }
 }
