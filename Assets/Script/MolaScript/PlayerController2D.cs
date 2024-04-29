@@ -100,6 +100,10 @@ public class PlayerController2D : MonoBehaviour
             UIInGame.Instance.ScoreUp();
             PlaySoundOnCollision.Instance.audioSource.Play();
         }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+
+        }
     }
 
     Vector2 CalculateProjectile(Vector2 origin, Vector2 targetPoint, float time)

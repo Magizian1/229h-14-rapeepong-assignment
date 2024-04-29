@@ -26,10 +26,5 @@ public class SpawnCoins : MonoBehaviour
         {
             Instantiate(coinPrefab, spawnPoint.transform.position, Quaternion.identity);
         }
-
-
-        /*Ball b = obj.GetComponent<Ball>();
-        b.SetColorAndPoint(col);*/
-
     }
 }

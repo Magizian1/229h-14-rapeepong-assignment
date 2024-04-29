@@ -14,8 +14,6 @@ public class GameManager2D : MonoBehaviour
     {
         Instance = this;
         mainCamera = Camera.main;
-
-        
     }
 
     void Update()
