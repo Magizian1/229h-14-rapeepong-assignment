@@ -613,6 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1494551573}
+  Coinsound: {fileID: 0}
 --- !u!4 &245406783
 Transform:
   m_ObjectHideFlags: 0
@@ -5674,6 +5675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6330183539018225953, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 6671309631272450908, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_Material
       value: 
@@ -5681,6 +5686,22 @@ PrefabInstance:
     - target: {fileID: 6671309631272450908, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_Constraints
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e7b9160dc48dd942b73bf2967a85e05, type: 3}
+    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8653071817106961619, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_LocalScale.x

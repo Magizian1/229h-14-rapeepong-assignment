@@ -7,11 +7,16 @@ public class UIInGame : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
     private int score;
+
+    [SerializeField] private AudioSource Coinsound;
+
     public static UIInGame Instance;
+    
 
     private void Awake()
     {
         Instance = this;
+        
     }
 
     void Start()
@@ -34,4 +39,6 @@ public class UIInGame : MonoBehaviour
     {
         scoreText.text = " " + score;
     }
+
+    
 }
