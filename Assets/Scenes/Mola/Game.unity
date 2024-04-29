@@ -5973,6 +5973,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1104909395}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2062582246 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+  m_PrefabInstance: {fileID: 9203711330137621573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073792979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6286,6 +6291,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8537829651830321038, guid: e09e6a0ec3242364297f867d2dd9850c, type: 3}
     - target: {fileID: 5718637812384126054, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: fireBu
+      value: 
+      objectReference: {fileID: 2062582246}
+    - target: {fileID: 5718637812384126054, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: fireBullet
+      value: 
+      objectReference: {fileID: 8300000, guid: f24640e7b2777e34693a8544a17150c0, type: 3}
+    - target: {fileID: 5718637812384126054, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: shootPoint
       value: 
       objectReference: {fileID: 929243176}
@@ -6305,9 +6318,25 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+    - target: {fileID: 7075888171955948560, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: Loop
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075888171955948560, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075888171955948560, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e7b9160dc48dd942b73bf2967a85e05, type: 3}
+    - target: {fileID: 7075888171955948560, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_Volume
@@ -6316,10 +6345,10 @@ PrefabInstance:
     - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4e7b9160dc48dd942b73bf2967a85e05, type: 3}
+      objectReference: {fileID: 8300000, guid: f24640e7b2777e34693a8544a17150c0, type: 3}
     - target: {fileID: 7668608855010681739, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8653071817106961619, guid: febadd4e33fafb540a5987f72a7f7c76, type: 3}
       propertyPath: m_LocalScale.x

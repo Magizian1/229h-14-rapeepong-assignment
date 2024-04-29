@@ -15,10 +15,15 @@ public class PlayerController2D : MonoBehaviour
     public Transform shootPoint;
     public Rigidbody2D bullet;
 
+    public AudioClip fireBullet;
+    public AudioSource fireBu;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        fireBu = GetComponent<AudioSource>();
+        fireBullet = GetComponent<AudioClip>();
     }
 
     
@@ -54,6 +59,7 @@ public class PlayerController2D : MonoBehaviour
 
             Rigidbody2D spawnBullet = Instantiate(bullet, shootPoint.position, Quaternion.identity);
             spawnBullet.velocity = projectileV;
+            fireBu.Play();
         }
 
     }
@@ -99,10 +105,6 @@ public class PlayerController2D : MonoBehaviour
             Destroy(collision.gameObject);
             UIInGame.Instance.ScoreUp();
             PlaySoundOnCollision.Instance.audioSource.Play();
-        }
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-
         }
     }
 

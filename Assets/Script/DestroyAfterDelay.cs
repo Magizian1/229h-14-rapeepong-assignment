@@ -7,7 +7,16 @@ public class DestroyAfterDelay : MonoBehaviour
     private float timer = 0f;
     private float delay = 5f;
 
+    public AudioClip clip;
+    public AudioSource source;
+
     public GameObject particlePrefab;
+
+    private void Start()
+    {
+        clip = GetComponent<AudioClip>();
+        source = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -23,6 +32,7 @@ public class DestroyAfterDelay : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            source.Play();
             Destroy(collision.gameObject);
             UIInGame.Instance.ScoreUp();
             OnDestroy();
@@ -32,7 +42,6 @@ public class DestroyAfterDelay : MonoBehaviour
     {
         if (particlePrefab != null)
         {
-
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
             timer += Time.deltaTime;
 
@@ -40,7 +49,6 @@ public class DestroyAfterDelay : MonoBehaviour
             {
                 Destroy(particlePrefab);
             }
-
         }
     }
 }
