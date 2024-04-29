@@ -8,7 +8,7 @@ public class UIInGame : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     private int score;
 
-    [SerializeField] private AudioSource Coinsound;
+
 
     public static UIInGame Instance;
     

@@ -12,8 +12,9 @@ public class PlayerController2D : MonoBehaviour
 
     private Animator animator;
 
-    
-    
+    public Transform shootPoint;
+    public Rigidbody2D bullet;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +43,17 @@ public class PlayerController2D : MonoBehaviour
         {
             FlipBack();
             
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+
+            Vector2 projectileV = CalculateProjectile(shootPoint.position, hit.point, 1);
+
+            Rigidbody2D spawnBullet = Instantiate(bullet, shootPoint.position, Quaternion.identity);
+            spawnBullet.velocity = projectileV;
         }
 
     }
@@ -88,5 +100,16 @@ public class PlayerController2D : MonoBehaviour
             UIInGame.Instance.ScoreUp();
             PlaySoundOnCollision.Instance.audioSource.Play();
         }
+    }
+
+    Vector2 CalculateProjectile(Vector2 origin, Vector2 targetPoint, float time)
+    {
+        Vector2 distance = targetPoint - origin;
+        float velocityX = distance.x / time;
+        float velocityY = distance.y / time + 0.5f * Mathf.Abs(Physics2D.gravity.y) * time;
+
+        Vector2 projecttileVelocity = new Vector2(velocityX, velocityY);
+
+        return projecttileVelocity;
     }
 }

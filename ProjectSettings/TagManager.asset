@@ -8,6 +8,7 @@ TagManager:
   - Bubble
   - Water
   - Coin
+  - Bullet
   layers:
   - Default
   - TransparentFX
