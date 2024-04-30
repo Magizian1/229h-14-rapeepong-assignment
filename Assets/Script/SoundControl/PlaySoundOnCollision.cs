@@ -5,25 +5,28 @@ using UnityEngine;
 public class PlaySoundOnCollision : MonoBehaviour
 {
     public AudioClip audioClip;
-    public AudioSource audioSource; // กำหนด AudioSource ใน Inspector
+    public AudioSource audioSource;
 
     public static PlaySoundOnCollision Instance;
-
 
     private void Start()
     {
         Instance = this;
-        audioClip = GetComponent<AudioClip>();
+        audioClip = GetComponent<AudioClip>();  
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void PlayS()
     {
-        
-        if (collision.gameObject.CompareTag("Player")) // ตั้ง Tag ของ Player ตามที่เหมาะสม
+        if (audioClip != null && audioSource != null) // ตรวจสอบว่า audioClip และ audioSource ไม่เป็น null ก่อนที่จะเล่นเสียง
         {
-            
+            audioSource.clip = audioClip;
             audioSource.Play();
         }
+        else
+        {
+            Debug.LogWarning("Audio clip or audio source is null.");
+        }
     }
+
 }

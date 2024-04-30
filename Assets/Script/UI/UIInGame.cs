@@ -11,6 +11,8 @@ public class UIInGame : MonoBehaviour
 
     public GameObject stopScene;
 
+    public GameObject exitButton;
+
     public static UIInGame Instance;
     
 
@@ -24,6 +26,7 @@ public class UIInGame : MonoBehaviour
     {
         score = 0;
         stopScene.SetActive(false);
+        exitButton.SetActive(true);
     }
 
     // Update is called once per frame
@@ -58,6 +61,17 @@ public class UIInGame : MonoBehaviour
 
     public void LoadSceneMenu()
     {
+        if (Time.timeScale == 1)
+        {
+            Time.timeScale = 0;
+
+        }
+        else
+        {
+            Time.timeScale = 1;
+
+        }
+        exitButton.SetActive(true);
         SceneManager.LoadScene("MainMenu");
     }
     public void StopScene()
@@ -73,6 +87,7 @@ public class UIInGame : MonoBehaviour
 
         }
         stopScene.SetActive(true);
+        exitButton.SetActive(false);
     }
     public void NoButton()
     {
@@ -87,6 +102,7 @@ public class UIInGame : MonoBehaviour
 
         }
         stopScene.SetActive(false);
+        exitButton.SetActive(true);
     }
     public void Restart()
     {
@@ -102,5 +118,6 @@ public class UIInGame : MonoBehaviour
         }
         score = 0;
         SceneManager.LoadScene("Game");
+        exitButton.SetActive(true);
     }
 }
