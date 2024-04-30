@@ -35,20 +35,9 @@ public class DestroyAfterDelay : MonoBehaviour
             source.Play();
             Destroy(collision.gameObject);
             UIInGame.Instance.ScoreUp();
-            OnDestroy();
-        }
-    }
-    void OnDestroy()
-    {
-        if (particlePrefab != null)
-        {
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
-            timer += Time.deltaTime;
-
-            if (timer >= delay)
-            {
-                Destroy(particlePrefab);
-            }
+            
         }
     }
+    
 }

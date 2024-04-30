@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController2D : MonoBehaviour
 {
     public float speed = 3f;
@@ -17,6 +17,8 @@ public class PlayerController2D : MonoBehaviour
 
     public AudioClip fireBullet;
     public AudioSource fireBu;
+
+    
 
     void Start()
     {
@@ -105,6 +107,11 @@ public class PlayerController2D : MonoBehaviour
             Destroy(collision.gameObject);
             UIInGame.Instance.ScoreUp();
             PlaySoundOnCollision.Instance.audioSource.Play();
+        }
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Goal"))
+        {
+            SceneManager.LoadScene("EndGame");
         }
     }
 

@@ -10,6 +10,8 @@ public class GameManager2D : MonoBehaviour
 
     public static GameManager2D Instance;
 
+    
+
     void Start()
     {
         Instance = this;
@@ -29,4 +31,6 @@ public class GameManager2D : MonoBehaviour
         mousePosition.z = -mainCamera.transform.position.z;
         return mainCamera.ScreenToWorldPoint(mousePosition);
     }
+
+    
 }
