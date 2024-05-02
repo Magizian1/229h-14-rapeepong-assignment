@@ -6,6 +6,7 @@ public class PlayerController2D : MonoBehaviour
 {
     public float speed = 3f;
     public float jump = 10f;
+    private bool isGrounded;
 
     private Rigidbody2D rb;
     private bool facingRight = true;
@@ -41,7 +42,7 @@ public class PlayerController2D : MonoBehaviour
         float move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(move * speed, rb.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             
             rb.AddForce(new Vector2(0, jump), ForceMode2D.Impulse);
@@ -132,5 +133,20 @@ public class PlayerController2D : MonoBehaviour
         Vector2 projecttileVelocity = new Vector2(velocityX, velocityY);
 
         return projecttileVelocity;
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 }
