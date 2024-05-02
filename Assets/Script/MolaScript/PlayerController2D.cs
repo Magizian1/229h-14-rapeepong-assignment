@@ -118,6 +118,11 @@ public class PlayerController2D : MonoBehaviour
             
         }
 
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Water"))
+        {
+            isGrounded = true;
+        }
+
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Goal"))
         {
             SceneManager.LoadScene("EndGame");
@@ -136,7 +141,7 @@ public class PlayerController2D : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Water"))
         {
             isGrounded = true;
         }
@@ -144,7 +149,15 @@ public class PlayerController2D : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Water"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Water"))
         {
             isGrounded = false;
         }

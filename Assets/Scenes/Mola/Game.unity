@@ -1811,7 +1811,7 @@ GameObject:
   - component: {fileID: 217934669}
   m_Layer: 0
   m_Name: GrassJoinHillLeft
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13476,7 +13476,7 @@ GameObject:
   - component: {fileID: 1236224967}
   m_Layer: 0
   m_Name: GrassJoinHillLeft (1)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
